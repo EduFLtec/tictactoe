@@ -1,0 +1,40 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+  }
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+header{
+    margin: 1rem;
+}
+
+.game-settings {
+    width: 10rem;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: fit-content;
+    margin: 1rem auto;
+    color: #04c0b2;
+}
+
+.cell {
+    font-family: sans-serif;
+    width: 6rem;
+    height: 6rem;
+    border: .1rem solid #dd8e1f;
+    cursor: pointer;
+    line-height: 6rem;
+    font-size: 4rem;
+    text-align: center;
+}
