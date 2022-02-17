@@ -12,21 +12,26 @@
         <h1>Tic Tac Toe</h1>
         <!-- JS: Change to next round or game restart after finishing game or round -->
         <fieldset class="game-settings">
+          <div class="select-players">
             <legend>Select Players</legend>
             <button class="player-select" id="pvp">PvP</button>
             <button class="player-select" id="pvc">PvC</button>
+          </div>
+           <!-- Add in score counter div & restart div  -->
         </fieldset>
     </header>
     <div class="game-container">
-        <div class="cell" data-index="1">X</div>
-        <div class="cell" data-index="2">O</div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6">O</div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8">X</div>
-        <div class="cell" data-index="9"></div>
+        <div class="game-board">
+            <div class="cell" data-cell>X</div>
+            <div class="cell" data-cell>O</div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell>O</div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell>X</div>
+            <div class="cell" data-cell></div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
