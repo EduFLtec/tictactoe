@@ -8,6 +8,7 @@ const gameBoard = (() => {
           cell.dataset.index = index;
         });
 
+        // Allow boardCells to be accessesible outside this function
         const getCells = () => boardCells;
     
         const clearBoard = function(){
@@ -26,20 +27,38 @@ const gameBoard = (() => {
   })();
 
   const displayController = (() => {
-    //add event listeners for clicks
-   
-    
-    gameBoard.getCells().forEach(boardCells =>{
-      boardCells.addEventListener('click', (e) => console.log(boardCells.dataset.index));
-    })
+    const circleMark = "O";
+    const xMark = "X";
+    let circleTurn; 
 
+    const applyMark = function(e) {
+      const cell = e.target;
+      const currentMark = circleTurn ? circleMark : xMark;
+      placeMark (cell, currentMark);
+      changeTurns();
+    }
+
+    const placeMark = function(cell, currentMark) {
+      cell.textContent = currentMark;
+    }
+
+    const changeTurns = () => {
+      circleTurn = !circleTurn;
+    }
+
+      // Event listener for board clicks
+      gameBoard.getCells().forEach(boardCells =>{
+        boardCells.addEventListener('click', applyMark, {once: true});
+      })
+
+  //  return {
+  //    applyMark,
+  //    placeMark
+  //  }
+
+  
 
   })();
- 
-
-
-
-
 
 
 // factories
